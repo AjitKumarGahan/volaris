@@ -1,0 +1,47 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: node:14.16.1
+  before_script:
+    #- apk add zip
+    - apt-get update
+    - apt-get install -y zip unzip
+    #- apt-get install -qq zip
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - npm install
+    - CI='' npm run build
+    - rm -rf public
+    - cp build/index.html build/404.html
+    - mv build public
+    - zip -r public.zip public
+  artifacts:
+    expire_in: 2 hour
+    paths:
+      - public.zip
+  only:
+    - main
+
+
+deploy:
+  stage: deploy
+  image: ubuntu
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/gitssh.pem
+    - chmod 0400 ~/.ssh/gitssh.pem
+  script:
+    - ssh -v -i  ~/.ssh/gitssh.pem -o "HostKeyAlgorithms ssh-rsa" -o StrictHostKeyChecking=no tiiueumy@$REMOTE_HOST "cd $REMOTE_PATH; rm -r ./"
+    - scp -v -i ~/.ssh/gitssh.pem -o "HostKeyAlgorithms ssh-rsa" -o StrictHostKeyChecking=no tiiueumy@$REMOTE_HOST:$REMOTE_PATH
+    - ssh -v -i ~/.ssh/gitssh.pem -o "HostKeyAlgorithms ssh-rsa" -o StrictHostKeyChecking=no tiiueumy@$REMOTE_HOST "cd $REMOTE_PATH; unzip public.zip; cp -pr public/* ./; rm public.zip; rm -r public/"
+  only:
+    - main

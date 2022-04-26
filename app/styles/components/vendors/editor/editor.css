@@ -1,0 +1,141 @@
+.edit_icon {
+    cursor: pointer;
+    font-size: 18px;
+    color: #27AE60;
+    transition: 0.3s;
+}
+
+.info_icon {
+    cursor: pointer;
+    font-size: 18px;
+    color: #2980B9;
+    transition: 0.3s;
+}
+
+.delete_icon {
+    cursor: pointer;
+    font-size: 21px;
+    color: #ff0203;
+    transition: 0.2s;
+}
+
+
+.area {
+    position: relative;
+    top: 35%;
+    border-width: 100px;
+    padding-bottom: 10px;
+}
+
+.reviewbtn {
+    align-items: center;
+}
+
+.textclass {
+    margin-bottom: 6%;
+}
+
+.info_icon .tooltiptext {
+    visibility: hidden;
+    background-color: #2980B9;
+    color: white;
+    border-radius: 4px;
+    position: absolute;
+    right: 9%;
+    margin-top: -23px;
+    font-size: 10px;
+    width: 50px;
+    padding: 5px;
+}
+
+.delete_icon .tooltiptext {
+    visibility: hidden;
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    position: absolute;
+    right: 6%;
+    font-size: 10px;
+    margin-top: -21px;
+    width: 50px;
+    padding: 5px;
+}
+
+.edit_icon .tooltiptext {
+    visibility: hidden;
+    background-color: #27AE60;
+    color: white;
+    border-radius: 3px;
+    position: absolute;
+    right: 12%;
+    font-size: 10px;
+    margin-top: -23px;
+    width: 50px;
+    padding: 5px;
+
+}
+
+.info_icon:hover .tooltiptext {
+    visibility: visible;
+}
+
+.edit_icon:hover .tooltiptext {
+    visibility: visible;
+}
+
+.delete_icon:hover .tooltiptext {
+    visibility: visible;
+}
+
+.classexport {
+    margin-right: 10px;
+    width: 100px;
+}
+
+.classimport {
+    margin-right: 10px;
+    width: 200px;
+}
+
+.classadd {
+    width: 100px;
+}
+
+.tbl_des_row {
+    height: 30px;
+    border-bottom: 1px solid #AED6F160;
+
+}
+
+.tbl_des_row>b {
+    font-size: 16px;
+    color: #01579b;
+}
+
+.dothorizontal {
+    font-size: 30px;
+    color: #039be5;
+}
+
+.dot_frok {
+    height: 10px;
+    display: flex;
+    justify-content: right;
+    position: relative;
+    top: -30px;
+    left: -20px;
+}
+
+.item_bar {
+    padding: 5px;
+    height: 40px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.dots_main{
+    float: right;
+    position: relative;
+    top: -96px;
+    font-size: 30px;
+    color: #3498DB;
+}

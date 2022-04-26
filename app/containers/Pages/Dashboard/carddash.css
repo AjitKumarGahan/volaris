@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader&family=Roboto:wght@500&display=swap');
+
+
+.crad_one {
+     color: white;
+    background: #FF512F;
+    background: -webkit-linear-gradient(to right, #DD2476, #FF512F);
+  background: linear-gradient(to right, #DD2476, #FF512F);
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+.card_two {
+    background: #4776E6;
+    background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
+    background: linear-gradient(to right, #8E54E9, #4776E6);color: white;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    border-radius: 10px;
+}
+
+
+.card_three {
+    background: #ff0084;
+    background: -webkit-linear-gradient(to right, #33001b, #ff0084);
+    background: linear-gradient(to right, #33001b, #ff0084);border: none;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    border-radius: 10px;
+}
+
+.icon_ac {
+    position: relative;
+    float: right;
+    font-size: 40px;
+    left: -30px;
+    top: 10px;
+
+}
+
+.nums {
+    font-size: 25px;
+    position: relative;
+    top: 15px;
+    left: 30px;
+    font-family: 'Newsreader', serif;
+    font-weight: 900;
+
+}
+
+.card-title {
+    font-size: 15px;
+    position: relative;
+    left: 30px;
+
+}
